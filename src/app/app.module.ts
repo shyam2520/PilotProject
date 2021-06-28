@@ -1,26 +1,35 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { HttpClientModule,HttpClient } from '@angular/common/http'
+import { EmployeeService } from './employee.service';
 
-// https://mdbootstrap.com/docs/angular/getting-started/installation/
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './search/search.component';
 
+// https://mdbootstrap.com/docs/angular/getting-started/installation/
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    SearchComponent
-  ],
   imports: [
+    FormsModule,
     BrowserModule,
+    // HttpClient,
+    HttpClientModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [],
+
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    SearchComponent,
+  ],
+ 
+  providers: [HttpClient,EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { };
