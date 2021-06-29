@@ -7,6 +7,7 @@ import { observable, Observable } from 'rxjs'
 // import { resourceLimits } from 'worker_threads';
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service'
+// import $ from "";
 
 @Component({
   selector: 'app-search',
@@ -19,32 +20,54 @@ import { EmployeeService } from '../employee.service'
 // })
 export class SearchComponent   {
   email:any;
-  employee_data=new Observable();
+  // employee_data:Employee[];
+  results:any;
   employee_name:any;
   employee_email:any;
   eservice:any;
   constructor(  private service:EmployeeService ) {
     // this.employee_data:Observable<Employee>;
    }
+   tableresult(data:any)
+   {
+    var tbodyRef :any = document.getElementById("table_body")?.getElementsByTagName('tbody')[0];
+    // console.log(data);
+    var tab_remo : any =document.getElementsByTagName('tr');
+    var rows:any =tab_remo?.length;
+    console.log(rows);
+
+      for(var i=1;i<rows;i++)
+        tab_remo[i].innerHTML="";
+    // $("#table_of_items tr").remove(); 
+    
+
+    for(let idx in data)
+    {
+      console.log(data[idx]);
+      var newRow = tbodyRef?.insertRow();
+      var empCell=newRow?.insertCell();
+      var engCell=newRow?.insertCell();
+      var empid=document.createTextNode(data[idx].employeeId);
+      var engagement=document.createTextNode(data[idx].engagementScore);
+      empCell?.appendChild(empid);
+      engCell?.appendChild(engagement);
+    }
+
+   }
    onFormSubmit(f:NgForm) 
    {
-      console.log("ran");
-      this.email=f.value.emailid;
-
-      if(this.email.length>0 && this.email.substring(this.email.length - 3)=="com")
-      {  
-        console.log(this.email);
-        // console.log(this.employee_data.EmployeeName);
-        this.service.getEmployeeById(this.email).subscribe( data =>{
-          console.log("observable")
-          console.log(`employee name ${data.employeeId}`);
+    // var emp_data:Employee[]=[];
+    this.email=f.value.emailid;
+    console.log(this.email);
+    this.service.getEmployeeById(this.email).subscribe( data =>{
+          this.tableresult(data);
           console.log(data);
-          this.employee_email=data.employeeId;
-          this.employee_name=data.engagmentScore;
-        });
+          // emp_data.push(data);
+          // console.log(emp_data);
 
 
-      } 
+    });
+
     }
 
   ngOnInit() 

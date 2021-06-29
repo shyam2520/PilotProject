@@ -11,24 +11,26 @@
         <div class="row">
             <div class="col-1"></div>
             <div class="col-10">
-                <h6>Search Communications</h6>
+                <h6 style="color:rgb(0, 102, 153);">Search Communications</h6>
             </div>
             <div class="col-1"></div>
         </div>
-
+        
         <!--Search communications content grid-->
         <div class="row">
             <div class="col-1"></div>
             <div class=col-5>
                 <div class="form-outline">
                     <form #f="ngForm" (ngSubmit)="onFormSubmit(f)">       
-                        <input type="text" id="typeText" name="emailid" ngModel required class="form-control"> <mdb-icon class="infoicon" fas icon="info"></mdb-icon>
+                        <input type="text" id="typeText" name="emailid" ngModel required class="form-control"> 
                         <label class="form-label" for="typeText"></label>
-                        <button type="submit" mat-raised-button color="accent"matTooltip="Click Submit Button">Submit</button>  
+                        <!-- <button type="submit" mat-raised-button color="accent"matTooltip="Click Submit Button">Submit</button>   -->
                     </form>
                 </div>
             </div>
-            <div class="col-1"></div>
+            <div class="col-1">
+                <mdb-icon style="margin-top: 10px;"class="infoicon" fas icon="info"></mdb-icon>
+            </div>
             <div class="col-4"><select class="browser-default custom-select">
                     <option selected>All</option>
                     <option value="1">One</option>
@@ -45,7 +47,7 @@
             <div class="row">
                 <div class="col-1"></div>
                 <div class="col-10">
-                    <h6>Advanced filters</h6>
+                    <h6 style="color:rgb(0, 102, 153);">Advanced filters</h6>
                 </div>
                 <div class="col-1"></div>
             </div>
@@ -53,37 +55,37 @@
             <!--Advanced filters content grid-->
             <div class="row">
                 <div class="col-1"></div>
-                <div class="col-3">Date from:</div>
-                <div class="col-1"></div>
+                <div class="col-1">Date from:</div>
+                <!-- <div class="col-3"></div> -->
                 <div class="col-3">
                     <div id="date-picker-example" class="">
                         <input placeholder="Select date" type="date" id="example" class="form-control">
                         <label for="example"></label>
                     </div>
                 </div>
-                <div class="col-4"></div>
+                <div class="col-7"></div>
             </div>
 
-            <!--Table grid-->
             <div class="row">
                 <div class="col-1"></div>
-                <div class="col-3">Date to:</div>
-                <div class="col-1"></div>
+                <div class="col-1">Date to:</div>
+                <!-- <div class="col-1"></div> -->
                 <div class="col-3">
                     <div id="date-picker-example" class="">
                         <input placeholder="Select date" type="date" id="example" class="form-control">
                         <label for="example"></label>
                     </div>
                 </div>
-                <div class="col-4"></div>
+                <div class="col-7"></div>
             </div>
         </div>
+            <!--Table grid-->
 
         <!--Results grid-->
         <div class="row">
             <div class="col-1"></div>
             <div class="col-10">
-                <h6>Results for "customer.com"</h6>
+                <h6 style="color:rgb(0, 102, 153);">Results for {{this.email}}</h6>
             </div>
             <div class="col-1"></div>
         </div>
@@ -92,21 +94,25 @@
         <div class="row">
             <div class="col-1"></div>
             <div class="col-10">
-                <table class="table table-bordered">
+                <table id="table_body" class="table table-bordered">
                     <thead>
                         <tr>
-                            <th scope="col">Entity</th>
+                            <th scope="col" style="width: 30%;">Entity</th>
                             <th scope="col">Engagement</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
+                    <tbody >
+                        <!-- <tr>
                             <td>{{employee_email}}</td>
                             <td>{{employee_name}}</td>
-                        </tr>
+                        </tr> -->
                         <tr>
-                            <td>mdinsaf@gmail.com</td>
-                            <td>Insaf</td>
+                            <td>mdinsaf@gmail.com <i style="float: right"class="far fa-envelope fa-lg ic"> </i></td>
+
+                            <td><p style="background-color:rgb(76, 160, 76);
+                                display: inline;
+                                padding:0.2em 0.5em 0.2em 0.5em;
+                                border-radius: 0.3em;">40</p> <i style="float: right;" class ="fas fa-ellipsis-h elip"></i></td>
                         </tr>
 
                     </tbody>
