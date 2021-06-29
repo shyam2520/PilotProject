@@ -1,9 +1,7 @@
 <main>
-    <br>
-    <br>
-    <br>
     <br><br>
-    <br>
+    <br><br>
+
     <!--Container class-->
     <div class=".container-fluid main">
 
@@ -11,7 +9,7 @@
         <div class="row">
             <div class="col-1"></div>
             <div class="col-10">
-                <h6 style="color:rgb(0, 102, 153);">Search Communications</h6>
+                <h6 >Search Communications</h6>
             </div>
             <div class="col-1"></div>
         </div>
@@ -23,13 +21,13 @@
                 <div class="form-outline">
                     <form #f="ngForm" (ngSubmit)="onFormSubmit(f)">       
                         <input type="text" id="typeText" name="emailid" ngModel required class="form-control"> 
+                        <mdb-icon style="margin-top: 10px;"class="infoicon" fas icon="info"></mdb-icon>
                         <label class="form-label" for="typeText"></label>
                         <!-- <button type="submit" mat-raised-button color="accent"matTooltip="Click Submit Button">Submit</button>   -->
                     </form>
                 </div>
             </div>
             <div class="col-1">
-                <mdb-icon style="margin-top: 10px;"class="infoicon" fas icon="info"></mdb-icon>
             </div>
             <div class="col-4"><select class="browser-default custom-select">
                     <option selected>All</option>
@@ -97,8 +95,8 @@
                 <table id="table_body" class="table table-bordered">
                     <thead>
                         <tr>
-                            <th scope="col" style="width: 30%;">Entity</th>
-                            <th scope="col">Engagement</th>
+                            <th scope="col" style="width: 45%;">Entity<i style="float: right"class="fas fa-sort fa-lg ic"></i></th>
+                            <th scope="col">Engagement<i style="float: right"class="fas fa-sort fa-lg ic"></i></th>
                         </tr>
                     </thead>
                     <tbody >
@@ -107,12 +105,9 @@
                             <td>{{employee_name}}</td>
                         </tr> -->
                         <tr>
-                            <td>mdinsaf@gmail.com <i style="float: right"class="far fa-envelope fa-lg ic"> </i></td>
-
-                            <td><p style="background-color:rgb(76, 160, 76);
-                                display: inline;
-                                padding:0.2em 0.5em 0.2em 0.5em;
-                                border-radius: 0.3em;">40</p> <i style="float: right;" class ="fas fa-ellipsis-h elip"></i></td>
+                            <td>mdinsaf@gmail.com <i style="float: right; margin:2px"class="far fa-envelope fa-lg ic"> </i></td>
+                            <td><p class="t1">140</p><i class="fas fa-ellipsis-h elip" style="float: right;"></i></td>    
+                            <!-- <td><p class="t3">40</p> <i style="float: right;" class ="fas fa-ellipsis-h elip"></i></td> -->
                         </tr>
 
                     </tbody>

@@ -47,12 +47,58 @@ export class SearchComponent   {
       var newRow = tbodyRef?.insertRow();
       var empCell=newRow?.insertCell();
       var engCell=newRow?.insertCell();
-      var empid=document.createTextNode(data[idx].employeeId);
-      var engagement=document.createTextNode(data[idx].engagementScore);
+
+      // contact name element creationg 
+      var empid=document.createElement("p");
+      var classicon:string="";
+      if(data[idx].mode=="email")
+        classicon="far fa-envelope fa-lg ic";
+      else if(data[idx].mode=="meeting")
+        classicon="far fa-calendar-alt fa-lg ic";
+      else if(data[idx].mode=="mobile")
+        classicon="fas fa-phone-alt fa-lg ic";
+ 
+      empid.innerHTML=data[idx].employeeId+" <i style=\"float: right; margin:2px\"class=\""+classicon+"\"></i>" ;
+      
+      //creation of engagement Score 
+      var engagement=document.createElement("p");
+      var classval:string=""
+      var score:any=data[idx].engagementScore;
+      if(score>=100)
+      {
+          // classval="t1";
+          engagement.style.backgroundColor="rgb(76, 160, 76)";
+          engagement.style.display="inline";
+          engagement.style.padding="0.2em 0.5em 0.2em 0.5em";
+          engagement.style.borderRadius="0.3em";
+      }
+      else if(score>=50 && score<100)
+      {
+        engagement.style.backgroundColor="rgb(80, 121, 247)";
+        engagement.style.display="inline";
+        engagement.style.padding="0.2em 0.5em 0.2em 0.5em";
+        engagement.style.borderRadius="0.3em";
+
+      }
+      else if(score<50)
+      {
+        engagement.style.backgroundColor="rgb(233, 44, 44)";
+        engagement.style.display="inline";
+        engagement.style.padding="0.2em 0.5em 0.2em 0.5em";
+        engagement.style.borderRadius="0.3em";
+      }        
+        engagement.textContent=score;
+
+
+        var itag=document.createElement("i");
+        itag.style.float="right";
+        itag.className="fas fa-ellipsis-h elip";
+
       empCell?.appendChild(empid);
       engCell?.appendChild(engagement);
+      engCell?.appendChild(itag);
     }
-
+ 
    }
    onFormSubmit(f:NgForm) 
    {
