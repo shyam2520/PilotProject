@@ -40,7 +40,7 @@ export class SearchComponent   {
         tab_remo[i].innerHTML="";
     // $("#table_of_items tr").remove(); 
     
-
+    // results table creation and styling 
     for(let idx in data)
     {
       console.log(data[idx]);
