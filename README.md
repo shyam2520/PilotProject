@@ -1,3 +1,10 @@
+# Aekam-Search
+A Simple dashboard which display the contacts stored which is done with the Angular JS as the front end and DOTNET for backend with Firebase as the database for storing the contacts 
+
+It provides the contacts email , engagement score and the the type of meeting happened perviously 
+
+## LIVE DEMO
+The page is live at [aekam-search](https://pilotdashboard.herokuapp.com/)
 # Pilot
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
