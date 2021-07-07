@@ -13,6 +13,7 @@ import { Employee } from './employee';
 
 export class EmployeeService {  
   url = 'https://pilotwebapi.herokuapp.com/api';  
+  // url ="https://localhost:5001/api/";
   constructor(private http: HttpClient) { }  
   getAllEmployee(): Observable<Employee[]> {  
     return this.http.get<Employee[]>(this.url + '/Employee/');  
