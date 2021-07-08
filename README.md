@@ -5,6 +5,11 @@ It provides the contacts email , engagement score and the the type of meeting ha
 
 ## LIVE DEMO
 The page is live at [aekam-search](https://pilotdashboard.herokuapp.com/)
+
+
+![](extras/ezgif.com-gif-maker.gif)
+
+
 # Pilot
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
